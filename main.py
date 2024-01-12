@@ -3,14 +3,18 @@ from math import floor
 
 ## Functions ##
 def verify_input(user_input):
+    '''Verifies the user has entered a valid date.'''
     while True:
+        # Gets initial date from user and checks for integer value.
         try:
             user_input = int(input('''Please enter a valid date in the ddmmyyyy format
 : '''))
         except ValueError:
             print("You did not enter a date.\n")
             continue
+        # Converts input to string.
         user_input = str(user_input)
+        # Checks date conditions.
         if len(user_input) != 8:
             print('')
             continue
@@ -23,9 +27,11 @@ def verify_input(user_input):
         if int(user_input[4:]) < 1900:
             print('\nYou must enter a year after 1900.')
             continue
+        # Returns new user_input to get potential re-entries.
         return user_input
 
 def exit_loop():
+    '''Allows the user to exit the program.'''
     while True:
         exit_input = input('''\nTo exit this program, type exit
 : ''').lower()
