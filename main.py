@@ -6,7 +6,7 @@ def verify_input(user_input):
     while True:
         try:
             user_input = int(input('''Please enter a valid date in the ddmmyyyy format
-    : '''))
+: '''))
         except ValueError:
             print("You did not enter a date.\n")
             continue
@@ -23,7 +23,7 @@ def verify_input(user_input):
         if int(user_input[4:]) < 1900:
             print('\nYou must enter a year after 1900.')
             continue
-        return
+        return user_input
 
 def exit_loop():
     while True:
